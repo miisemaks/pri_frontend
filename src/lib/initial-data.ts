@@ -1,0 +1,132 @@
+import { Store, User } from './types';
+
+export const initialStores: Store[] = [
+  {
+    id: 'store-1',
+    name: 'Fresh Market Yakutsk',
+    shortDescription: 'Продукты и готовые наборы с доставкой в течение дня.',
+    address: 'г. Якутск, ул. Курашова, 24',
+    location: 'ТЦ Центральный, 1 этаж, секция A-12',
+    schedule: 'Пн-Вс: 09:00-22:00',
+    primaryColor: '#22c55e',
+    mapQuery: 'Якутск, Курашова 24',
+    products: [
+      {
+        id: 'product-1',
+        name: 'Корзина фермерских овощей',
+        price: 1890,
+        discountPercent: 15,
+        stock: 14,
+        category: 'Наборы',
+        description: 'Ассорти сезонных овощей и зелени от локальных поставщиков.',
+      },
+      {
+        id: 'product-2',
+        name: 'Молоко 3.2% (1 л)',
+        price: 125,
+        discountPercent: 5,
+        stock: 70,
+        category: 'Молочная продукция',
+        description: 'Свежая молочная продукция с ежедневной поставкой.',
+      },
+    ],
+    clients: [
+      { id: 'client-1', name: 'Анна П.', visits: 16, bonusPoints: 750, certificates: 2 },
+      { id: 'client-2', name: 'Игорь М.', visits: 9, bonusPoints: 320, certificates: 1 },
+      { id: 'client-3', name: 'Светлана В.', visits: 21, bonusPoints: 1200, certificates: 4 },
+    ],
+    bonuses: ['5% на второй заказ', '500 бонусов за друга', 'Ночная скидка 10%'],
+    certificates: ['Подарочный сертификат 1000 ₽', 'Сертификат на бесплатную доставку'],
+    salesStats: [
+      { day: 'Пн', revenue: 45200, orders: 38 },
+      { day: 'Вт', revenue: 51800, orders: 41 },
+      { day: 'Ср', revenue: 48900, orders: 39 },
+      { day: 'Чт', revenue: 56300, orders: 46 },
+      { day: 'Пт', revenue: 61100, orders: 52 },
+    ],
+  },
+  {
+    id: 'store-2',
+    name: 'TechPoint',
+    shortDescription: 'Электроника, аксессуары и сервисные услуги в одном месте.',
+    address: 'г. Якутск, пр. Ленина, 12',
+    location: 'БЦ Престиж, 2 этаж, павильон 204',
+    schedule: 'Пн-Сб: 10:00-20:00, Вс: 11:00-18:00',
+    primaryColor: '#3b82f6',
+    mapQuery: 'Якутск, проспект Ленина 12',
+    products: [
+      {
+        id: 'product-3',
+        name: 'Беспроводные наушники AirBeat Pro',
+        price: 7990,
+        discountPercent: 12,
+        stock: 23,
+        category: 'Аудио',
+        description: 'Шумоподавление, автономность до 30 часов.',
+      },
+      {
+        id: 'product-4',
+        name: 'Повербанк 20000 mAh',
+        price: 2990,
+        discountPercent: 8,
+        stock: 31,
+        category: 'Аксессуары',
+        description: 'Быстрая зарядка и поддержка USB-C.',
+      },
+    ],
+    clients: [
+      { id: 'client-4', name: 'Алексей Р.', visits: 7, bonusPoints: 280, certificates: 1 },
+      { id: 'client-5', name: 'Марина К.', visits: 13, bonusPoints: 640, certificates: 3 },
+      { id: 'client-6', name: 'Тимур Г.', visits: 5, bonusPoints: 150, certificates: 0 },
+    ],
+    bonuses: ['Кэшбэк 7% на аксессуары', 'Бонусы x2 по пятницам', 'Скидка 15% на сервис'],
+    certificates: ['Подарочный сертификат 3000 ₽', 'Подарочный сертификат 5000 ₽'],
+    salesStats: [
+      { day: 'Пн', revenue: 98300, orders: 29 },
+      { day: 'Вт', revenue: 102400, orders: 31 },
+      { day: 'Ср', revenue: 89400, orders: 27 },
+      { day: 'Чт', revenue: 118900, orders: 34 },
+      { day: 'Пт', revenue: 126200, orders: 37 },
+    ],
+  },
+];
+
+export const initialUser: User = {
+  id: 'user-1',
+  fullName: 'Михаил Максимов',
+  email: 'mikhail@pri.market',
+  activeRole: 'buyer',
+  availableRoles: ['buyer'],
+  friendInvites: [
+    {
+      id: 'friend-1',
+      from: 'Алина Сергеева',
+      message: 'Давай добавимся в друзья для совместных покупок.',
+      status: 'pending',
+    },
+    {
+      id: 'friend-2',
+      from: 'Андрей Колесов',
+      message: 'Подключайся, будем обмениваться подборками товаров.',
+      status: 'pending',
+    },
+  ],
+  staffInvites: [
+    {
+      id: 'staff-1',
+      storeId: 'store-1',
+      storeName: 'Fresh Market Yakutsk',
+      role: 'seller',
+      from: 'Ольга Директор',
+      status: 'pending',
+    },
+    {
+      id: 'staff-2',
+      storeId: 'store-2',
+      storeName: 'TechPoint',
+      role: 'director',
+      from: 'Игорь Основатель',
+      status: 'pending',
+    },
+  ],
+};

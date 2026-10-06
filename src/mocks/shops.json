@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Фермерская лавка 'Утро'",
+    "description": "Фермерские продукты",
+    "rating": 4.9,
+    "address": "ул. Баумана, 42",
+    "distance": 450,
+    "image": null
+  },
+  {
+    "id": 2,
+    "title": "Хлебное место",
+    "description": "Пекарня Кофе",
+    "rating": 4.8,
+    "address": "ул. Профсоюзная, 16",
+    "distance": 700,
+    "image": null
+  },
+  {
+    "id": 3,
+    "title": "Зеленая комната",
+    "description": "Растения цветы",
+    "rating": 4.7,
+    "address": "ул. Пушкина, 21",
+    "distance": 1100,
+    "image": null
+  },
+  {
+    "id": 4,
+    "title": "Лапа и хвост",
+    "description": "Товары для животных",
+    "rating": 4.9,
+    "address": "ул. Кремлевская, 9",
+    "distance": 1400,
+    "image": null
+  }
+]

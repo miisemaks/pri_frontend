@@ -42,6 +42,13 @@
 }
 
 @theme inline {
+  --color-brand: #16846B;
+  --color-text-brand: #18865F;
+  --color-bg-brand-400: #DDF2EB;
+  --color-bg-secondary: #F4F6F3;
+  --color-text-secondary: #68736E;
+  --color-border: #DCE3DE;
+  --color-orange-400: #FFF0D6;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
@@ -98,6 +105,7 @@ html,
 body {
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--color-bg-secondary);
 }
 
 body {
@@ -119,8 +127,12 @@ select {
   font-family: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: var(--color-bg-secondary);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);

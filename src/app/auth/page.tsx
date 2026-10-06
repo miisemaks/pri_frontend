@@ -3,13 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
-import { useAppContext } from "@/context/app-context";
 import { Controller, useForm } from "react-hook-form";
 import { LoginFormData, loginSchema } from "@/lib/schemas/login.shema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function AuthPage() {
-  const { login } = useAppContext();
   const router = useRouter();
   const { control, getValues } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
@@ -25,7 +23,6 @@ export default function AuthPage() {
       return;
     }
 
-    login();
     router.push("/");
   };
 

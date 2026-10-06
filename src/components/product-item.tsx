@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const ProductItem = (props: Props) => {
-  const { title, price, description, image, href } = props;
+  const { title, price, description, href } = props;
 
   return (
     <Link href={href}>

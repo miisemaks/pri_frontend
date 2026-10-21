@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: "export",
-  basePath: "/pri_frontend",
+  // output: "export",
+  // basePath: "/pri_frontend",
+  // trailingSlash: true,
   images: {
     remotePatterns: [
       {

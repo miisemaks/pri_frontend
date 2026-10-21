@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Молоко фермерское 3,5%",
+    "count": 100,
+    "measurement": "1 л",
+    "price": 1120,
+    "image": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/183/234/848/992/514/29/100039746252b0.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Творог зерненный",
+    "count": 10,
+    "measurement": "350 г",
+    "price": 185,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcVQiUFiaqhTUyGu36h7Er8fy_cgfJjHcZYnbssgzAQ&s=10"
+  },
+  {
+    "id": 3,
+    "title": "Яйца куриные С0",
+    "count": 120,
+    "measurement": "10 шт",
+    "price": 160,
+    "image": null
+  },
+  {
+    "id": 4,
+    "title": "Мед луговой",
+    "count": 11,
+    "measurement": "250 г",
+    "price": 390,
+    "image": null
+  },
+  {
+    "id": 5,
+    "title": "Сыр «Качотта»",
+    "count": 9,
+    "measurement": "200 г",
+    "price": 320,
+    "image": null
+  },
+  {
+    "id": 6,
+    "title": "Сметана 20%",
+    "count": 3,
+    "measurement": "250 г",
+    "price": 145,
+    "image": null
+  }
+]

@@ -10,10 +10,10 @@ import { useParams } from "next/navigation";
 import productCategories from "@/mocks/product-categories.json";
 import { SearchInput } from "@/components/search-input";
 import { ProductItem } from "@/components/product-item";
+import products from "@/mocks/products.json";
 
 const ShopPage = () => {
   const params = useParams<{ id: string }>();
-  // const { id } = await params;
   const data = shops.find((i) => i.id === +params?.id);
   const [productCategory, setProductCategory] = useState<number | null>(null);
   const [search, setSearch] = useState("");
@@ -61,14 +61,14 @@ const ShopPage = () => {
             categories={productCategories}
           />
           <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
-            {[1, 2, 3].map((i) => (
+            {products.map((i) => (
               <ProductItem
-                key={`product_${i}`}
-                title="Title"
-                description="descr"
-                price={200}
-                image={null}
-                href={`/products/${i}`}
+                key={`product_${i.id}`}
+                title={i.title}
+                description={"за " + i.measurement}
+                price={i.price}
+                image={i.image}
+                href={`/products/${i.id}`}
               />
             ))}
           </div>

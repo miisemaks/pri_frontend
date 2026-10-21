@@ -9,9 +9,24 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import shops from "@/mocks/shops.json";
 import shop_categories from "@/mocks/shop-categories.json";
+import { Select } from "@/components/select";
+import { FilterCheckbox } from "@/components/filter-checkbox";
 
 export default function BuyerHomePage() {
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState<{
+    visible: boolean;
+    category: number | null;
+    region: string | null;
+    sort: "distance" | "rating" | null;
+    isWorking: boolean | null;
+  }>({
+    visible: false,
+    category: null,
+    isWorking: false,
+    region: null,
+    sort: null,
+  });
 
   return (
     <div className="min-h-screen">
@@ -56,6 +71,59 @@ export default function BuyerHomePage() {
                 Фильтр
               </label>
             </button>
+          </div>
+          <div className="flex flex-col gap-3 bg-white p-4 rounded-[18px] border-border border">
+            <p className="font-bold text-[18px]">Фильтры</p>
+            <div className="grid grid-cols-2 gap-2">
+              <Select
+                data={shop_categories.map((i) => ({
+                  label: i.title,
+                  value: i.id,
+                }))}
+                label="Категория"
+                value={filter.category}
+                onChange={(val) => {
+                  setFilter((prev) => ({ ...prev, category: val }));
+                }}
+              />
+              <Select
+                data={[]}
+                label="Район"
+                value={null}
+                onChange={() => {}}
+              />
+              <Select
+                data={[]}
+                label="Работает сейчас"
+                value={null}
+                onChange={() => {}}
+              />
+              <Select
+                data={[]}
+                label="Сортировка"
+                value={null}
+                onChange={() => {}}
+              />
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <FilterCheckbox
+                checked={false}
+                title="Самовывоз"
+                onChange={() => {}}
+              />
+              <FilterCheckbox
+                checked={true}
+                title="Доставка"
+                onChange={() => {}}
+              />
+              <FilterCheckbox
+                checked={filter.isWorking ?? false}
+                title="Открыто сейчас"
+                onChange={(val) =>
+                  setFilter((state) => ({ ...state, isWorking: val }))
+                }
+              />
+            </div>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-2.5">
             {shop_categories.map((i, index) => (

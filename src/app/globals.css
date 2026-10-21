@@ -165,6 +165,10 @@ button {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+[data-base-ui-select-trigger] * {
+  pointer-events: none !important;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -23,3 +23,6 @@ export function formatNumber(
   }
   return new Intl.NumberFormat(locale).format(num);
 }
+
+export const delay = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

@@ -1,4 +1,4 @@
-export type UserRole = 'buyer' | 'seller' | 'director';
+export type UserRole = "buyer" | "seller" | "director";
 
 export type Product = {
   id: string;
@@ -9,6 +9,17 @@ export type Product = {
   category: string;
   description: string;
 };
+
+export interface ProductItem {
+  id: number;
+  title: string;
+  count: number | null;
+  measurement: string; //"1 л";
+  price: number;
+  image: string | null;
+  images: string[];
+  description: string | null;
+}
 
 export type Client = {
   id: string;
@@ -44,16 +55,16 @@ export type FriendInvite = {
   id: string;
   from: string;
   message: string;
-  status: 'pending' | 'accepted' | 'rejected';
+  status: "pending" | "accepted" | "rejected";
 };
 
 export type StaffInvite = {
   id: string;
   storeId: string;
   storeName: string;
-  role: 'seller' | 'director';
+  role: "seller" | "director";
   from: string;
-  status: 'pending' | 'accepted' | 'rejected';
+  status: "pending" | "accepted" | "rejected";
 };
 
 export type User = {

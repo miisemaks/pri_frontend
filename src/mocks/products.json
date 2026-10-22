@@ -5,7 +5,12 @@
     "count": 100,
     "measurement": "1 л",
     "price": 1120,
-    "image": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/183/234/848/992/514/29/100039746252b0.jpg"
+    "image": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/183/234/848/992/514/29/100039746252b0.jpg",
+    "images": [
+      "https://main-cdn.sbermegamarket.ru/big1/hlr-system/183/234/848/992/514/29/100039746252b0.jpg",
+      "https://tsx.x5static.net/i/800x800-fit/xdelivery/files/48/81/d045026d09f98b3b21d81cc9e4cc.jpg"
+    ],
+    "description": ""
   },
   {
     "id": 2,
@@ -13,7 +18,11 @@
     "count": 10,
     "measurement": "350 г",
     "price": 185,
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcVQiUFiaqhTUyGu36h7Er8fy_cgfJjHcZYnbssgzAQ&s=10"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcVQiUFiaqhTUyGu36h7Er8fy_cgfJjHcZYnbssgzAQ&s=10",
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDcVQiUFiaqhTUyGu36h7Er8fy_cgfJjHcZYnbssgzAQ&s=10"
+    ],
+    "description": null
   },
   {
     "id": 3,
@@ -21,7 +30,9 @@
     "count": 120,
     "measurement": "10 шт",
     "price": 160,
-    "image": null
+    "image": null,
+    "images": [],
+    "description": null
   },
   {
     "id": 4,
@@ -29,7 +40,9 @@
     "count": 11,
     "measurement": "250 г",
     "price": 390,
-    "image": null
+    "image": null,
+    "images": [],
+    "description": null
   },
   {
     "id": 5,
@@ -37,7 +50,9 @@
     "count": 9,
     "measurement": "200 г",
     "price": 320,
-    "image": null
+    "image": null,
+    "images": [],
+    "description": null
   },
   {
     "id": 6,
@@ -45,6 +60,8 @@
     "count": 3,
     "measurement": "250 г",
     "price": 145,
-    "image": null
+    "image": null,
+    "images": [],
+    "description": null
   }
 ]

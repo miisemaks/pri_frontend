@@ -15,6 +15,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  allowedDevOrigins: ["192.168.0.24"], // TODO: удалить в будщем
 };
 
 export default nextConfig;

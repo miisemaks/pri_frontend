@@ -21,6 +21,16 @@ export interface ProductItem {
   description: string | null;
 }
 
+export interface ShopItem {
+  id: number;
+  title: string;
+  description: string;
+  rating: number | null;
+  address: string;
+  distance: number | null;
+  image: string | null;
+}
+
 export type Client = {
   id: string;
   name: string;

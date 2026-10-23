@@ -37,7 +37,7 @@ export const ShopItem = (props: Props) => {
               <Image src={image} alt="Example" width={500} height={300} />
             ) : (
               <div className="w-full h-full flex items-center bg-gray-100 justify-center">
-                <ImageIcon size={40} color="#68736E" />
+                <ImageIcon size={40} className="text-text-secondary" />
               </div>
             )}
           </AspectRatio>
@@ -47,7 +47,7 @@ export const ShopItem = (props: Props) => {
           >
             {distance ? (
               <div className="bg-[#FFFFFF99] backdrop-blur-xs flex flex-row items-center gap-1 px-2 py-2 rounded-[18px]">
-                <GeoIcon size={13} />
+                <GeoIcon size={12} />
                 <p className="font-semibold text-[12px]">{distance} км</p>
               </div>
             ) : null}
@@ -61,7 +61,7 @@ export const ShopItem = (props: Props) => {
           <div className="flex flex-row justify-between">
             <CardTitle className="font-bold text-[17px]">{title}</CardTitle>
             <div className="flex flex-row gap-1 items-center">
-              <RatingIcon />
+              <RatingIcon className="text-[#B86B12]" />
               <p className="font-semibold text-[12px]">{rating}</p>
             </div>
           </div>

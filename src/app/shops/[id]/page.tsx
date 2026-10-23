@@ -27,7 +27,7 @@ const ShopPage = () => {
               <Image src={data?.image} alt="Example" width={500} height={300} />
             ) : (
               <div className="w-full h-full flex items-center bg-white justify-center">
-                <ImageIcon size={40} color="#68736E" />
+                <ImageIcon size={40} className="text-text-secondary" />
               </div>
             )}
           </AspectRatio>

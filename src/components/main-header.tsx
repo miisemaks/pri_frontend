@@ -35,7 +35,7 @@ export const MainHeader = () => {
     <header className="flex flex-row items-center justify-center bg-white">
       <div className="flex flex-row h-16 items-center justify-between px-4 gap-4 max-w-360 bg-white w-full">
         <div className="flex flex-row h-16 items-center gap-2">
-          <LogoIcon />
+          <LogoIcon className="text-brand" />
           <p className="text-2xl font-bold">Рядом</p>
         </div>
 
@@ -64,7 +64,7 @@ export const MainHeader = () => {
         </div>
         <div className="hidden md:flex flex-row gap-2 items-center">
           <button className="flex flex-row items-center justify-center gap-1 cursor-pointer">
-            <MapPin />
+            <MapPin className="text-text-secondary" />
             <p className="text-text-secondary">Якутск</p>
           </button>
           <SwitchUserMode

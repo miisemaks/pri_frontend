@@ -11,7 +11,7 @@ export const SearchInput = (props: Props) => {
 
   return (
     <div className="flex flex-row gap-2 items-center bg-white h-12 px-3 rounded-[12px] has-focus-visible:border-brand border has-focus-visible:ring-2 has-focus-visible:ring-brand">
-      <LoopIcon size={18} />
+      <LoopIcon size={18} className="text-text-secondary" />
       <input
         value={value}
         onChange={(e) => onChange(e.target.value)}

@@ -19,13 +19,13 @@ export const Head = (props: Props) => {
       </div>
       <div className="flex flex-row gap-2">
         <div className="flex flex-row items-center gap-1 border border-border bg-white px-3 py-2 rounded-[12px]">
-          <ShopIcon size={16} />
+          <ShopIcon size={16} className="text-brand" />
           <label className="font-semibold text-[12px]">
             {shopCount} магазина
           </label>
         </div>
         <div className="flex flex-row items-center gap-1 border border-border bg-white px-3 py-2 rounded-[12px]">
-          <ProductIcon size={16} />
+          <ProductIcon size={16} className="text-brand" />
           <label className="font-semibold text-[12px]">
             {productCount} товара
           </label>

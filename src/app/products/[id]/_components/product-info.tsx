@@ -38,12 +38,12 @@ export const ProductInfo = () => {
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
         <ProductCharacter
-          icon={<BottleIcon size={18} />}
+          icon={<BottleIcon size={18} className="text-brand" />}
           label="Состав"
           value="Цельное коровье молоко"
         />
         <ProductCharacter
-          icon={<SnowIcon size={18} />}
+          icon={<SnowIcon size={18} className="text-brand" />}
           label="Хранение"
           value="+2…+6 °C"
         />

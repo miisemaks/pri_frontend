@@ -14,7 +14,10 @@ export const Counter = () => {
   return (
     <div className="flex flex-row items-center justify-center border-border border px-3 bg-white rounded-[12px] h-11.5 gap-3 ">
       <button onClick={handleSubtract}>
-        <MinusIcon size={16} />
+        <MinusIcon
+          size={16}
+          className={`${count > 1 ? "text-text-primary" : "text-text-secondary"}`}
+        />
       </button>
       <p className="font-semibold w-7 text-center">{count}</p>
       <button className="cursor-pointer" onClick={handlePlus}>

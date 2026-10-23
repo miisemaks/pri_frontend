@@ -48,7 +48,7 @@ export default function BuyerHomePage() {
             </div>
             <div className="flex flex-row self-auto md:self-end gap-3.5 bg-bg-brand-400 h-fit p-4.5 rounded-[18px]">
               <div className="flex items-center justify-center size-11 bg-white rounded-[12px]">
-                <Map />
+                <Map size={21} className="text-text-secondary" />
               </div>
               <div className="gap-1">
                 <p className="font-semibold">214 мест поблизости</p>
@@ -66,7 +66,9 @@ export default function BuyerHomePage() {
               className="h-11.5 rounded-[12px]"
             />
             <button className="flex flex-row justify-center items-center py-3.25 px-5.25 gap-2 rounded-[12px] bg-white w-11 md:w-fit h-11 md:h-full">
-              <FilterIcon />
+              <div>
+                <FilterIcon />
+              </div>
               <label className="hidden md:flex font-semibold cursor-pointer">
                 Фильтр
               </label>

@@ -19,7 +19,7 @@ export const ShopInfo = (props: Props) => {
     <Card className="flex flex-col md:flex-row p-5 gap-5.5 rounded-[18px]">
       <div className="flex flex-row gap-3 flex-1">
         <div className="bg-brand-400 size-9.5 flex items-center justify-center rounded-[10px]">
-          <MapPin />
+          <MapPin className="text-text-secondary" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-[12px] text-text-secondary">Адрес</label>
@@ -29,7 +29,7 @@ export const ShopInfo = (props: Props) => {
       </div>
       <div className="flex flex-row gap-3 flex-1">
         <div className="bg-brand-400 size-9.5 flex items-center justify-center rounded-[10px]">
-          <TimeIcon size={18} />
+          <TimeIcon size={18} className="text-brand" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-[12px] text-text-secondary">Сегодня</label>
@@ -41,7 +41,7 @@ export const ShopInfo = (props: Props) => {
       </div>
       <div className="flex flex-row gap-3 flex-1">
         <div className="bg-brand-400 size-9.5 flex items-center justify-center rounded-[10px]">
-          <CallIcon size={18} />
+          <CallIcon size={18} className="text-text-brand" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-[12px] text-text-secondary">Контакты</label>
@@ -50,7 +50,7 @@ export const ShopInfo = (props: Props) => {
       </div>
       <div className="flex flex-row gap-3 flex-1">
         <div className="bg-orange-400 size-9.5 flex items-center justify-center rounded-[10px]">
-          <RatingIcon size={18} />
+          <RatingIcon size={18} className="text-[#B86B12]" />
         </div>
         <div className="flex flex-col gap-1">
           <label className="text-[12px] text-text-secondary">Рейтинг</label>

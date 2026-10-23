@@ -1,10 +1,6 @@
-export const FilterIcon = ({
-  size = 16,
-  color = "#17211D",
-}: {
-  size?: number;
-  color?: string;
-}) => {
+import { IconProps } from "@/lib/types";
+
+export const FilterIcon = ({ size = 16, className }: IconProps) => {
   return (
     <svg
       width={size}
@@ -12,10 +8,12 @@ export const FilterIcon = ({
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      stroke="currentColor"
     >
       <path
         d="M6.66667 3.33333H2M8 12.6667H2M9.33333 2V4.66667M10.6667 11.3333V14M14 8H8M14 12.6667H10.6667M14 3.33333H9.33333M5.33333 6.66667V9.33333M5.33333 8H2"
-        stroke={color}
+        stroke={"currentColor"}
         strokeLinecap="round"
       />
     </svg>

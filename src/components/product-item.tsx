@@ -29,7 +29,7 @@ export const ProductItem = (props: Props) => {
             />
           ) : (
             <div className="size-full flex items-center bg-gray-100 justify-center">
-              <ImageIcon size={32} color="#68736E" />
+              <ImageIcon size={32} className="text-text-secondary" />
             </div>
           )}
         </div>

@@ -47,7 +47,7 @@ export const ShopInfo = (props: Props) => {
           <p className="font-semibold text-[12px] md:text-[14px]">
             Страница магазина
           </p>
-          <ArrowRight />
+          <ArrowRight size={16} className="text-text-primary" />
         </button>
       </div>
     </div>

@@ -22,6 +22,8 @@
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
+  --color-danger: #C94A45;
+  --color-danger-400: #C94A4533;
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
@@ -59,6 +61,8 @@
   --color-text-brand: #18865F;
   --color-brand-400: #DDF2EB;
   --color-bg-secondary: #F4F6F3;
+  --color-danger: #C94A45;
+  --color-danger-400: #C94A4533;
   --color-text-secondary: #68736E;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -131,6 +135,11 @@ select {
 
 button {
   cursor: pointer;
+}
+
+input {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-secondary);
 }
 
 .dark {

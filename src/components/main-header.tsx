@@ -6,7 +6,7 @@ import { MapPin } from "./icons/map-pin";
 import { SwitchUserMode } from "./switch-user-mode";
 import { useCallback, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useAuthStore } from "@/store/auth-store";
+import { useUserStore } from "@/store/user-store";
 
 const ButtonLink = ({
   title,
@@ -31,7 +31,7 @@ export const MainHeader = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [userMode, setUserMode] = useState<"customer" | "seller">("customer");
-  const { isAuth } = useAuthStore();
+  const { email, first_name, last_name } = useUserStore();
 
   const handleMainLogo = useCallback(() => {
     router.push("/");
@@ -76,8 +76,14 @@ export const MainHeader = () => {
           />
         </div>
         <div className="md:hidden">
-          {isAuth ? (
-            <button>User</button>
+          {email ? (
+            <Avatar size="lg" onClick={() => {}} className={"cursor-pointer"}>
+              <AvatarImage alt={(first_name ?? "") + " " + (last_name ?? "")} />
+              <AvatarFallback>
+                {first_name?.[0] ?? ""}
+                {last_name?.[0] ?? ""}
+              </AvatarFallback>
+            </Avatar>
           ) : (
             <button className="font-semibold text-brand" onClick={handleLogin}>
               Войти
@@ -93,14 +99,13 @@ export const MainHeader = () => {
             value={userMode}
             onChange={(value) => setUserMode(value)}
           />
-          {isAuth ? (
+          {email ? (
             <Avatar size="lg" onClick={() => {}} className={"cursor-pointer"}>
-              <AvatarImage
-                //   src="https://github.com/shadcn.png"
-                alt="@shadcn"
-                //   className={"grayscale"}
-              />
-              <AvatarFallback>Новый пользователь</AvatarFallback>
+              <AvatarImage alt="@shadcn" />
+              <AvatarFallback>
+                {first_name?.[0] ?? ""}
+                {last_name?.[0] ?? ""}
+              </AvatarFallback>
             </Avatar>
           ) : (
             <button

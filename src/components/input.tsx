@@ -1,4 +1,7 @@
+"use client";
+
 import { Input as BaseInput, InputState } from "@base-ui/react/input";
+import { HTMLInputTypeAttribute } from "react";
 
 type Props = {
   value: string;
@@ -8,6 +11,7 @@ type Props = {
   error?: string;
   className?: string | ((state: InputState) => string | undefined) | undefined;
   placeholder?: string;
+  type?: HTMLInputTypeAttribute;
 };
 
 export const Input = (props: Props) => {
@@ -19,21 +23,27 @@ export const Input = (props: Props) => {
     error,
     className,
     placeholder,
+    type,
   } = props;
 
   return (
     <div className="flex flex-col gap-1">
       <BaseInput
-        value={value}
+        value={value ?? ""}
         onChange={(e) => onChange?.(e.target.value)}
         disabled={disabled}
         autoFocus={autoFocus}
         className={className}
         placeholder={placeholder}
         style={{
-          border: error ? "1px solid var(--color-danger)" : undefined,
-          backgroundColor: error ? "var(--color-danger-400)" : undefined,
+          padding: 12,
+          borderRadius: 12,
+          border: error
+            ? "1px solid var(--color-danger)"
+            : "1px solid var(--color-border)",
+          backgroundColor: error ? "var(--color-danger-400)" : "transparent",
         }}
+        type={type}
       />
       {error ? (
         <label className="text-danger text-[12px]">{error}</label>

@@ -33,10 +33,10 @@ export const PasswordInput = (props: Props) => {
   return (
     <div className="flex flex-col gap-1">
       <div
-        className={`flex flex-row gap-2 ${error ? "bg-danger-400" : "bg-bg-secondary"} px-3 rounded-[12px]`}
+        className={`flex flex-row gap-2 h-12 md:h-14 ${error ? "bg-danger-400" : "bg-transparent"} border-border border p-3 rounded-[12px]`}
       >
         <BaseInput
-          value={value}
+          value={value ?? ""}
           onChange={(e) => onChange?.(e.target.value)}
           disabled={disabled}
           autoFocus={autoFocus}
@@ -47,6 +47,10 @@ export const PasswordInput = (props: Props) => {
             backgroundColor: "transparent",
             outline: "none",
             padding: 0,
+            height: "auto",
+            borderRadius: 0,
+            width: "100%",
+            // flex: 1,
           }}
           type={isShowPass ? "text" : "password"}
         />

@@ -7,19 +7,28 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/input";
 import { PasswordInput } from "@/components/password-input";
 import { useCallback } from "react";
+import { useUserStore } from "@/store/user-store";
 
 export default function AuthPage() {
   const router = useRouter();
-  const { control, handleSubmit } = useForm<LoginFormData>({
+  const { control, handleSubmit, getValues } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
+  const { login } = useUserStore();
 
   const handleNavigate = () => {
-    router.push("/");
+    try {
+      login({ email: getValues("email"), password: getValues("password") });
+      router.push("/");
+    } catch (e) {
+      if (e instanceof Error) {
+        alert(e?.message);
+      }
+    }
   };
 
   const handleRegister = useCallback(() => {
@@ -55,6 +64,7 @@ export default function AuthPage() {
                       placeholder="name@example.ru"
                       className={"w-full h-12 px-3 rounded-[12px]"}
                       error={error?.message}
+                      type="email"
                     />
                   </div>
                 )}

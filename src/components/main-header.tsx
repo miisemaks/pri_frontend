@@ -41,6 +41,10 @@ export const MainHeader = () => {
     router.push("/login");
   }, [router]);
 
+  const handleProfile = useCallback(() => {
+    router.push("/profile");
+  }, [router]);
+
   return (
     <header className="flex flex-row items-center justify-center bg-white">
       <div className="flex flex-row h-16 items-center justify-between px-4 gap-4 max-w-360 bg-white w-full">
@@ -77,7 +81,11 @@ export const MainHeader = () => {
         </div>
         <div className="md:hidden">
           {email ? (
-            <Avatar size="lg" onClick={() => {}} className={"cursor-pointer"}>
+            <Avatar
+              size="lg"
+              onClick={handleProfile}
+              className={"cursor-pointer"}
+            >
               <AvatarImage alt={(first_name ?? "") + " " + (last_name ?? "")} />
               <AvatarFallback>
                 {first_name?.[0] ?? ""}
@@ -100,8 +108,12 @@ export const MainHeader = () => {
             onChange={(value) => setUserMode(value)}
           />
           {email ? (
-            <Avatar size="lg" onClick={() => {}} className={"cursor-pointer"}>
-              <AvatarImage alt="@shadcn" />
+            <Avatar
+              size="lg"
+              onClick={handleProfile}
+              className={"cursor-pointer"}
+            >
+              <AvatarImage alt={(first_name ?? "") + " " + (last_name ?? "")} />
               <AvatarFallback>
                 {first_name?.[0] ?? ""}
                 {last_name?.[0] ?? ""}

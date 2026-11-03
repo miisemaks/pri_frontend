@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import { Input as BaseInput, InputState } from "@base-ui/react/input";
 import { Eye, EyeClosed } from "lucide-react";
 
@@ -12,6 +12,7 @@ type Props = {
   error?: string;
   className?: string | ((state: InputState) => string | undefined) | undefined;
   placeholder?: string;
+  leftElement?: ReactNode;
 };
 
 export const PasswordInput = (props: Props) => {
@@ -23,6 +24,7 @@ export const PasswordInput = (props: Props) => {
     error,
     className,
     placeholder,
+    leftElement,
   } = props;
   const [isShowPass, setIsShowPass] = useState(false);
 
@@ -33,8 +35,9 @@ export const PasswordInput = (props: Props) => {
   return (
     <div className="flex flex-col gap-1">
       <div
-        className={`flex flex-row gap-2 h-12 md:h-14 ${error ? "bg-danger-400" : "bg-transparent"} border-border border p-3 rounded-[12px]`}
+        className={`flex flex-row items-center gap-2 h-12 md:h-14 ${error ? "bg-danger-400" : "bg-transparent"} border-border border p-3 rounded-[12px]`}
       >
+        {leftElement}
         <BaseInput
           value={value ?? ""}
           onChange={(e) => onChange?.(e.target.value)}

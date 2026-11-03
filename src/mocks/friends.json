@@ -1,0 +1,42 @@
+[
+  {
+    "first_name": "Анна",
+    "last_name": "Кузнецова",
+    "sended_at": "",
+    "email": "annakuznetsova@mail.ru",
+    "phone": "+7 (914) 111-11-11",
+    "invite_accepted": null,
+    "shared_subsriptions": []
+  },
+  {
+    "first_name": "Дмитрий",
+    "last_name": "Мельников",
+    "sended_at": "",
+    "email": "dmitriymelnikov@mail.ru",
+    "phone": "+7 (964) 222-11-11",
+    "invite_accepted": null,
+    "shared_subsriptions": [
+      {
+        "id": 1,
+        "title": "Фермерская лавка 'Утро'"
+      },
+      {
+        "id": 2,
+        "title": "Хлебное место"
+      },
+      {
+        "id": 3,
+        "title": "Зеленая комната"
+      }
+    ]
+  },
+  {
+    "first_name": "Елена",
+    "last_name": "Смирнова",
+    "sended_at": "",
+    "email": "elenasmirnova@mail.ru",
+    "phone": "+7 (964) 222-33-11",
+    "invite_accepted": true,
+    "shared_subsriptions": []
+  }
+]

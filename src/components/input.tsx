@@ -1,7 +1,7 @@
 "use client";
 
 import { Input as BaseInput, InputState } from "@base-ui/react/input";
-import { HTMLInputTypeAttribute } from "react";
+import { HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react";
 
 type Props = {
   value: string;
@@ -10,8 +10,10 @@ type Props = {
   autoFocus?: boolean;
   error?: string;
   className?: string | ((state: InputState) => string | undefined) | undefined;
+  containerClassName?: HTMLAttributes<HTMLDivElement>["className"];
   placeholder?: string;
   type?: HTMLInputTypeAttribute;
+  leftElement?: ReactNode;
 };
 
 export const Input = (props: Props) => {
@@ -24,27 +26,34 @@ export const Input = (props: Props) => {
     className,
     placeholder,
     type,
+    containerClassName,
+    leftElement,
   } = props;
 
   return (
-    <div className="flex flex-col gap-1">
-      <BaseInput
-        value={value ?? ""}
-        onChange={(e) => onChange?.(e.target.value)}
-        disabled={disabled}
-        autoFocus={autoFocus}
-        className={className}
-        placeholder={placeholder}
-        style={{
-          padding: 12,
-          borderRadius: 12,
-          border: error
-            ? "1px solid var(--color-danger)"
-            : "1px solid var(--color-border)",
-          backgroundColor: error ? "var(--color-danger-400)" : "transparent",
-        }}
-        type={type}
-      />
+    <div className={`flex flex-col w-full gap-1 ${containerClassName}`}>
+      <div className="flex flex-1 w-full items-center gap-1">
+        {leftElement}
+        <BaseInput
+          value={value ?? ""}
+          onChange={(e) => onChange?.(e.target.value)}
+          disabled={disabled}
+          autoFocus={autoFocus}
+          className={className}
+          placeholder={placeholder}
+          style={{
+            width: "100%",
+            padding: 12,
+            borderRadius: 12,
+            border: error
+              ? "1px solid var(--color-danger)"
+              : "1px solid var(--color-border)",
+            backgroundColor: error ? "var(--color-danger-400)" : "transparent",
+          }}
+          type={type}
+        />
+      </div>
+
       {error ? (
         <label className="text-danger text-[12px]">{error}</label>
       ) : null}

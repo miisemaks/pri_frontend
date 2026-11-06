@@ -7,9 +7,9 @@ import { useUserStore } from "@/store/user-store";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { KeyLockIcon } from "@/components/icons/key-lock";
-import { PasswordInput } from "@/components/password-input";
+import { PasswordInput, PasswordInputRef } from "@/components/password-input";
 import { KeyIcon } from "@/components/icons/key";
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Switch } from "@/components/switch";
 import { BellIcon } from "@/components/icons/bell";
@@ -26,6 +26,8 @@ export const PersonalData = () => {
     },
   });
   const router = useRouter();
+  const newPassRef = useRef<PasswordInputRef>(null);
+  const repeatPassRef = useRef<PasswordInputRef>(null);
 
   const handleBack = useCallback(() => {
     router.back();
@@ -156,6 +158,11 @@ export const PersonalData = () => {
                   }
                   onChange={onChange}
                   error={error?.message}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      newPassRef.current?.focus();
+                    }
+                  }}
                 />
               )}
             />
@@ -176,6 +183,12 @@ export const PersonalData = () => {
                   }
                   onChange={onChange}
                   error={error?.message}
+                  ref={newPassRef}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      repeatPassRef.current?.focus();
+                    }
+                  }}
                 />
               )}
             />
@@ -196,6 +209,7 @@ export const PersonalData = () => {
                   }
                   onChange={onChange}
                   error={error?.message}
+                  ref={repeatPassRef}
                 />
               )}
             />

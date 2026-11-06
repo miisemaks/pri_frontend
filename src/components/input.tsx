@@ -32,7 +32,18 @@ export const Input = (props: Props) => {
 
   return (
     <div className={`flex flex-col w-full gap-1 ${containerClassName}`}>
-      <div className="flex flex-1 w-full items-center gap-1">
+      <div
+        className={`
+        flex flex-1 w-full items-center gap-1 
+        focus-within:outline-2 focus-within:outline-brand
+          focus-within:border-none
+        rounded-[12px]
+        border
+        border-border
+        ${error ? "focus-within:bg-danger-400" : "focus-within:bg-transparent"}
+        ${error ? "border-danger" : "border-border"}
+      `}
+      >
         {leftElement}
         <BaseInput
           value={value ?? ""}
@@ -45,9 +56,7 @@ export const Input = (props: Props) => {
             width: "100%",
             padding: 12,
             borderRadius: 12,
-            border: error
-              ? "1px solid var(--color-danger)"
-              : "1px solid var(--color-border)",
+            border: "none",
             backgroundColor: error ? "var(--color-danger-400)" : "transparent",
           }}
           type={type}

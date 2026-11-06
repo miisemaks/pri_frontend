@@ -2,17 +2,17 @@
 
 import { MailIcon } from "@/components/icons/mail";
 import { Person2Icon } from "@/components/icons/person2";
+import { SafeGuardIcon } from "@/components/icons/safe-guard";
+import { ShopIcon } from "@/components/icons/shop";
+import { InfoWithDot } from "@/components/info-with-dot";
 import { Input } from "@/components/input";
 import { Fragment, useState } from "react";
 import friends from "@/mocks/friends.json";
 import shops from "@/mocks/shops.json";
-import { getInvitationDescription, getName } from "@/lib/utils";
-import { InfoWithDot } from "@/components/info-with-dot";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ShopIcon } from "@/components/icons/shop";
-import { SafeGuardIcon } from "@/components/icons/safe-guard";
+import { getInvitationDescription, getName } from "@/lib/utils";
 
-export const Invitations = () => {
+const Invitations = () => {
   const [search, setSearch] = useState("");
 
   return (
@@ -165,3 +165,5 @@ export const Invitations = () => {
     </>
   );
 };
+
+export default Invitations;

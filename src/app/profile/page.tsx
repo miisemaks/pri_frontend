@@ -1,35 +1,15 @@
 "use client";
 
 import { InfoWithDot } from "@/components/info-with-dot";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useUserStore } from "@/store/user-store";
 import { PersonalData } from "./_components/personal-data";
 import { Subscreen } from "./_components/subscreen";
-import { useMemo, useState } from "react";
+import { MainHeader } from "@/components/main-header";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getName } from "@/lib/utils";
-import { Invitations } from "./_components/invitations";
+import { useUserStore } from "@/store/user-store";
 
 export default function ProfilePage() {
   const { first_name, last_name, email } = useUserStore();
-  const [subscreen, setSubscreen] = useState<
-    "personal_data" | "invitations" | "security" | "favorites"
-  >("personal_data");
-
-  const Subscreens = useMemo(() => {
-    switch (subscreen) {
-      case "personal_data":
-        return <PersonalData />;
-      case "invitations":
-        return <Invitations />;
-      case "security":
-        return <></>;
-      case "favorites":
-        return <></>;
-      default:
-        return <></>;
-    }
-  }, [subscreen]);
-
   return (
     <main className="flex flex-col flex-1 items-center w-full">
       <section className="flex flex-col max-w-360 w-full gap-4 px-4 md:px-6 py-4 md:py-8 md:gap-8 sm:gap-6 sm:px-6">
@@ -65,10 +45,10 @@ export default function ProfilePage() {
                 <p className="text-text-secondary text-[11px]">{email}</p>
               </div>
             </div>
-            <Subscreen value={subscreen} onChange={setSubscreen} />
+            <Subscreen value={"edit"} />
           </div>
           <div className="grid col-span-12 md:col-span-10 gap-4">
-            {Subscreens}
+            <PersonalData />
           </div>
         </div>
       </section>

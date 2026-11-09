@@ -3,7 +3,6 @@
 import { InfoWithDot } from "@/components/info-with-dot";
 import { PersonalData } from "./_components/personal-data";
 import { Subscreen } from "./_components/subscreen";
-import { MainHeader } from "@/components/main-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { getName } from "@/lib/utils";
 import { useUserStore } from "@/store/user-store";

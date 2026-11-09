@@ -180,6 +180,19 @@ input {
   pointer-events: none !important;
 }
 
+#map {
+
+  button {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-brand-400);
+    padding: 4px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

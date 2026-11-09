@@ -34,11 +34,11 @@ export const Input = (props: Props) => {
     <div className={`flex flex-col w-full gap-1 ${containerClassName}`}>
       <div
         className={`
-        flex flex-1 w-full items-center gap-1 
+        flex flex-1 w-full items-center gap-3
         focus-within:outline-2 focus-within:outline-brand
           focus-within:border-none
         rounded-[12px]
-        border
+        border px-3
         border-border
         ${error ? "focus-within:bg-danger-400" : "focus-within:bg-transparent"}
         ${error ? "border-danger" : "border-border"}
@@ -54,8 +54,10 @@ export const Input = (props: Props) => {
           placeholder={placeholder}
           style={{
             width: "100%",
-            padding: 12,
+            padding: 0,
+            height: 46,
             borderRadius: 12,
+            outline: "none",
             border: "none",
             backgroundColor: error ? "var(--color-danger-400)" : "transparent",
           }}

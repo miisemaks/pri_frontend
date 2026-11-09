@@ -11,6 +11,7 @@ import shops from "@/mocks/shops.json";
 import shop_categories from "@/mocks/shop-categories.json";
 import { Select } from "@/components/select";
 import { FilterCheckbox } from "@/components/filter-checkbox";
+import { useRouter } from "next/navigation";
 
 export default function BuyerHomePage() {
   const [search, setSearch] = useState("");
@@ -27,6 +28,7 @@ export default function BuyerHomePage() {
     region: null,
     sort: null,
   });
+  const router = useRouter();
 
   return (
     <div className="min-h-screen">
@@ -46,7 +48,12 @@ export default function BuyerHomePage() {
                 покупки без ожидания.
               </p>
             </div>
-            <div className="flex flex-row self-auto md:self-end gap-3.5 bg-bg-brand-400 h-fit p-4.5 rounded-[18px]">
+            <button
+              onClick={() => {
+                router.push("/map");
+              }}
+              className="flex flex-row self-auto md:self-end gap-3.5 bg-bg-brand-400 h-fit p-4.5 rounded-[18px]"
+            >
               <div className="flex items-center justify-center size-11 bg-white rounded-[12px]">
                 <Map size={21} className="text-text-secondary" />
               </div>
@@ -56,14 +63,14 @@ export default function BuyerHomePage() {
                   В радиусе 5 км от центра
                 </p>
               </div>
-            </div>
+            </button>
           </div>
           <div className="flex flex-row gap-3">
             <Input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Магазин, товар или категория"
-              className="h-11.5 rounded-[12px]"
+              className="h-11.5 rounded-[12px] bg-white"
             />
             <button className="flex flex-row justify-center items-center py-3.25 px-5.25 gap-2 rounded-[12px] bg-white w-11 md:w-fit h-11 md:h-full">
               <div>
